@@ -6,5 +6,6 @@ __pycache__
 .DS_Store
 
 lambda_function/package
+quotes_raw.json
 quotes.json
 secrets.yaml

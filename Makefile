@@ -9,7 +9,7 @@ install_deps:
 build_zip:
 	rm my-deployment-package.zip || true
 	(cd lambda_function/package/ && zip -r ../../$(ZIP_PKG_NAME) .)
-	(cd lambda_function/ && zip ../$(ZIP_PKG_NAME) lambda_function.py secrets.yaml)
+	(cd lambda_function/ && zip ../$(ZIP_PKG_NAME) lambda_function.py secrets.yaml quotes.json)
 
 .PHONY: build
 build: install_deps build_zip
