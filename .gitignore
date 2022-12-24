@@ -1,0 +1,10 @@
+.venv
+*.iml
+*.sqlite3
+__pycache__
+.idea
+.DS_Store
+
+lambda_function/package
+quotes.json
+secrets.yaml
