@@ -9,4 +9,5 @@ lambda_function/package
 quotes_raw.json
 quotes.json
 nicknames.json
+deployment_package.zip
 secrets.yaml
