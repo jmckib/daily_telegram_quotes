@@ -8,4 +8,5 @@ __pycache__
 lambda_function/package
 quotes_raw.json
 quotes.json
+nicknames.json
 secrets.yaml
