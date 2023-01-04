@@ -37,7 +37,8 @@ def lambda_handler(event, context):
     # Build the message
     date_str = (today.strftime('%B %-d{th}, %Y')
                 .replace('{th}', _day_suffix(today.day)))
-    msg = (f"Good morning {nickname},\n\nHere's your daily dose of lurv for "
+    greeting = secrets.get("CUSTOM_GREETING", "Here's your daily quote")
+    msg = (f"Good morning {nickname},\n\n{greeting} for "
            f"{date_str}:\n\n{quote_dict['quote']}")
     if "author" in quote_dict:
         msg += f"\n\n<i>- {quote_dict['author']}</i>"
