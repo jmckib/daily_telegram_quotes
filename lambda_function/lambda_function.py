@@ -16,20 +16,15 @@ def _day_suffix(n):
 def lambda_handler(event, context):
     secrets = yaml.load(open('secrets.yaml'), Loader=Loader)
 
-    SEED = 1
-    random.seed(SEED)
     quotes = json.load(open("quotes.json"))
-    quotes = sorted(quotes, key=lambda i: random.random())
-
     nicknames = json.load(open("nicknames.json"))
-    nicknames = sorted(nicknames, key=lambda i: random.random())
 
     # Get today's date in the Pacific timezone
     timezone_offset = -8.0  # Pacific Standard Time (UTC−08:00)
     tzinfo = timezone(timedelta(hours=timezone_offset))
     today = datetime.now(tzinfo).date()
 
-    # Start over every 6 months.
+    # Start over after reaching end of quotes
     tm_yday = today.timetuple().tm_yday
     quote_dict = quotes[(tm_yday - 1) % len(quotes)]
     nickname = nicknames[(tm_yday - 1) % len(nicknames)]
